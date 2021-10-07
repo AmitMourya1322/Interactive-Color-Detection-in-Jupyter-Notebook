@@ -1,0 +1,22 @@
+import cv2
+import numpy as np
+from ipywidgets import *
+import matplotlib.pyplot as plt
+
+
+def f (hMin ,hMax ,Smin,Smax ,Vmin,Vmax):
+    img1 = cv2.imread('p.png')
+    img = cv2.cvtColor(img1 ,cv2.COLOR_BGR2RGB)  #in matplot image show in rgb format in cv2 it show in bgr format remeber this else you will face problem
+    hsv = cv2.cvtColor(img,cv2.COLOR_RGB2HSV)# if you are going to use cv2 to show image then cv2.COLOR_BGR2HSV 
+    Lhsv = np.array([hMin,Smin,Vmin])
+    Uhsv = np.array([hMax ,Smax,Vmax])
+    mask = cv2.inRange(hsv,Lhsv ,Uhsv)
+    r = cv2.bitwise_and(img,img,mask =mask)
+    
+    
+    plt.imshow(r)
+  
+    
+interactive_plot = interactive(f,hMin=(0,179),hMax = (0,179),Smin = (0,250),Smax =(0,255),Vmin=(0,255),Vmax=(0,255))
+
+interactive_plot
