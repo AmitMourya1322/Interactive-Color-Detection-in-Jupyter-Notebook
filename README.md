@@ -12,4 +12,4 @@ Now convert the image into HSV format (but why )
 Now we have to define upper and lower limits of HSV so that we can extract a particular color (Why limits and how it works)
 We can use slider (ipywidgets is use to make it) to extract a particular in opencv . But we are using matplotlib to show our image in jupyter
 
-Youtube Link : https://www.engineerknow.com/2021/06/interactive-color-detection-in-jupyter.html
+Youtube Link :https://youtu.be/Kr_70Uqy7l8
